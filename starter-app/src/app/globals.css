@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Primary Colors - Like a Human Brand */
+  --lime: #C8F169;
+  --lime-hover: #B8E159;
+  --lime-light: #E8FBBC;
+
+  /* Neutral Colors */
+  --black: #000000;
+  --dark-gray: #1A1A1A;
+  --medium-gray: #666666;
+  --light-gray: #999999;
+  --white: #FFFFFF;
+
+  /* Semantic Colors */
+  --success: #22C55E;
+  --warning: #F59E0B;
+  --error: #EF4444;
+
+  /* Theme */
+  --background: #000000;
+  --foreground: #FFFFFF;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+/* ================================================
+   ACCESSIBILITY: Focus Styles
+   ================================================ */
+
+*:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--background), 0 0 0 4px var(--lime);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--lime);
+  box-shadow: 0 0 0 3px rgba(200, 241, 105, 0.3);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--background), 0 0 0 4px var(--lime);
+}
+
+/* ================================================
+   ACCESSIBILITY: Reduced Motion Support
+   ================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* ================================================
+   Custom scrollbar (dark theme)
+   ================================================ */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark-gray);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--medium-gray);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--light-gray);
+}
+
+/* ================================================
+   Selection
+   ================================================ */
+::selection {
+  background: var(--lime);
+  color: var(--black);
+}
+
+/* ================================================
+   High Contrast Mode Support
+   ================================================ */
+@media (forced-colors: active) {
+  *:focus-visible {
+    outline: 2px solid CanvasText;
+    outline-offset: 2px;
+  }
+
+  button {
+    border: 1px solid ButtonText;
+  }
+}

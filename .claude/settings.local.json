@@ -23,7 +23,9 @@
       "Bash(brew install --cask 1password 1password-cli)",
       "Bash(brew install --cask bitwarden && brew install bitwarden-cli)",
       "Bash(brew uninstall --cask 1password 1password-cli)",
-      "Bash(git add .gitignore .claude/settings.local.json myproj/.python-version myproj/README.md myproj/main.py myproj/pyproject.toml myproj/uv.lock && git commit -m \"$\\(cat <<'EOF'\nAdd Python project \\(myproj\\) and update .gitignore\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\" && git push)"
+      "Bash(git add .gitignore .claude/settings.local.json myproj/.python-version myproj/README.md myproj/main.py myproj/pyproject.toml myproj/uv.lock && git commit -m \"$\\(cat <<'EOF'\nAdd Python project \\(myproj\\) and update .gitignore\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\" && git push)",
+      "Bash(cp -r /Users/Juan-dev/Downloads/starter-app /Users/Juan-dev/dev/ai/claude-local/ && cp /Users/Juan-dev/Downloads/CLAUDE.md /Users/Juan-dev/dev/ai/claude-local/ && cp -r /Users/Juan-dev/Downloads/skills /Users/Juan-dev/dev/ai/claude-local/ && cp -r /Users/Juan-dev/Downloads/agents /Users/Juan-dev/dev/ai/claude-local/ && cp /Users/Juan-dev/Downloads/README.md /Users/Juan-dev/dev/ai/claude-local/)",
+      "Bash(git add CLAUDE.md README.md agents/ skills/ starter-app/ .claude/settings.local.json && git commit -m \"$\\(cat <<'EOF'\nAdd Claude Code Masterclass materials\n\n- CLAUDE.md and README.md with workshop instructions\n- agents/ with 8 AI specialist roles \\(frontend-lead, backend-lead, etc.\\)\n- skills/ with 5 knowledge bases \\(design, GSAP, components, forms, landing pages\\)\n- starter-app/ with Next.js 15 template \\(Tailwind, shadcn/ui, TypeScript\\)\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\" && git push)"
     ]
   }
 }
