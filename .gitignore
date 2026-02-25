@@ -14,6 +14,13 @@ Thumbs.db
 *.log
 npm-debug.log*
 
+# Python
+.venv/
+__pycache__/
+
+# direnv
+.envrc
+
 # Build output
 dist/
 build/

@@ -9,7 +9,21 @@
       "Bash(git branch -m main)",
       "Bash(brew install gh)",
       "Bash(gh repo create claude-local --public --source=. --remote=origin --description \"Claude local project\")",
-      "Bash(git add cli-local.js .claude/ && git commit -m \"$\\(cat <<'EOF'\nInitial commit: add CLI tool for local Claude Max endpoint\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")"
+      "Bash(git add cli-local.js .claude/ && git commit -m \"$\\(cat <<'EOF'\nInitial commit: add CLI tool for local Claude Max endpoint\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git push -u origin main)",
+      "Bash(git add .gitignore && git commit -m \"$\\(cat <<'EOF'\nAdd .gitignore for node_modules, env files, and OS artifacts\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\" && git push)",
+      "Bash(brew install gh jq yq ripgrep fd fzf bat eza tree watch)",
+      "Bash(brew install uv)",
+      "Bash(mkdir -p /Users/Juan-dev/dev/ai/claude-local/myproj && cd /Users/Juan-dev/dev/ai/claude-local/myproj && uv init && uv venv && uv add openai anthropic)",
+      "Bash(brew install direnv)",
+      "Bash(echo 'eval \"$\\(direnv hook zsh\\)\"' >> ~/.zshrc)",
+      "Bash(brew install pnpm)",
+      "Bash(node --version && pnpm --version)",
+      "Bash(brew install pre-commit)",
+      "Bash(brew install --cask 1password 1password-cli)",
+      "Bash(brew install --cask bitwarden && brew install bitwarden-cli)",
+      "Bash(brew uninstall --cask 1password 1password-cli)",
+      "Bash(git add .gitignore .claude/settings.local.json myproj/.python-version myproj/README.md myproj/main.py myproj/pyproject.toml myproj/uv.lock && git commit -m \"$\\(cat <<'EOF'\nAdd Python project \\(myproj\\) and update .gitignore\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\" && git push)"
     ]
   }
 }
