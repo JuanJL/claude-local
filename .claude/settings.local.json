@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(claude login)",
+      "Bash(claude auth status 2>&1 || claude config list 2>&1 || echo \"Cannot check auth status from nested session\")",
+      "Bash(git config --global user.name 2>&1; git config --global user.email 2>&1)",
+      "Bash(gh auth status 2>&1)",
+      "Bash(git init)",
+      "Bash(git branch -m main)",
+      "Bash(brew install gh)",
+      "Bash(gh repo create claude-local --public --source=. --remote=origin --description \"Claude local project\")",
+      "Bash(git add cli-local.js .claude/ && git commit -m \"$\\(cat <<'EOF'\nInitial commit: add CLI tool for local Claude Max endpoint\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")"
+    ]
+  }
+}
