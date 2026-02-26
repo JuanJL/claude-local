@@ -3,26 +3,16 @@
 @tailwind utilities;
 
 :root {
-  /* Primary Colors - Like a Human Brand */
-  --lime: #C8F169;
-  --lime-hover: #B8E159;
-  --lime-light: #E8FBBC;
+  --primary: #E63946;
+  --secondary: #F4A261;
+  --accent: #2A9D8F;
+  --dark: #1D1D1D;
+  --cream: #FFF8F0;
+  --warm-gray: #6B5B4F;
+  --gold: #FFD700;
 
-  /* Neutral Colors */
-  --black: #000000;
-  --dark-gray: #1A1A1A;
-  --medium-gray: #666666;
-  --light-gray: #999999;
-  --white: #FFFFFF;
-
-  /* Semantic Colors */
-  --success: #22C55E;
-  --warning: #F59E0B;
-  --error: #EF4444;
-
-  /* Theme */
-  --background: #000000;
-  --foreground: #FFFFFF;
+  --background: #FFF8F0;
+  --foreground: #1D1D1D;
 }
 
 body {
@@ -32,32 +22,16 @@ body {
 }
 
 /* ================================================
-   ACCESSIBILITY: Focus Styles
+   Focus Styles
    ================================================ */
-
 *:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 2px var(--background), 0 0 0 4px var(--lime);
-}
-
-input:focus,
-textarea:focus,
-select:focus {
-  outline: none;
-  border-color: var(--lime);
-  box-shadow: 0 0 0 3px rgba(200, 241, 105, 0.3);
-}
-
-a:focus-visible,
-button:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 2px var(--background), 0 0 0 4px var(--lime);
+  box-shadow: 0 0 0 2px var(--background), 0 0 0 4px var(--primary);
 }
 
 /* ================================================
-   ACCESSIBILITY: Reduced Motion Support
+   Reduced Motion Support
    ================================================ */
-
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -76,45 +50,80 @@ button:focus-visible {
 }
 
 /* ================================================
-   Custom scrollbar (dark theme)
+   Custom scrollbar
    ================================================ */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--dark-gray);
-  border-radius: 4px;
+  background: var(--cream);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--medium-gray);
-  border-radius: 4px;
+  background: var(--warm-gray);
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--light-gray);
+  background: var(--dark);
 }
 
 /* ================================================
    Selection
    ================================================ */
 ::selection {
-  background: var(--lime);
-  color: var(--black);
+  background: var(--secondary);
+  color: var(--dark);
 }
 
 /* ================================================
-   High Contrast Mode Support
+   Slot Machine Reel
    ================================================ */
-@media (forced-colors: active) {
-  *:focus-visible {
-    outline: 2px solid CanvasText;
-    outline-offset: 2px;
-  }
+.slot-reel-container {
+  overflow: hidden;
+  position: relative;
+}
 
-  button {
-    border: 1px solid ButtonText;
-  }
+.slot-reel-strip {
+  transition: transform 0.1s linear;
+}
+
+.slot-reel-strip.spinning {
+  transition: none;
+}
+
+.slot-reel-strip.stopping {
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ================================================
+   Jackpot Flash
+   ================================================ */
+@keyframes jackpot-flash {
+  0%, 100% { background-color: transparent; }
+  50% { background-color: rgba(255, 215, 0, 0.15); }
+}
+
+.jackpot-flash {
+  animation: jackpot-flash 0.3s ease-in-out 3;
+}
+
+/* ================================================
+   Neon Glow Text
+   ================================================ */
+.neon-glow {
+  text-shadow:
+    0 0 10px rgba(255, 215, 0, 0.8),
+    0 0 20px rgba(255, 215, 0, 0.6),
+    0 0 40px rgba(255, 215, 0, 0.4),
+    0 0 80px rgba(230, 57, 70, 0.3);
+}
+
+/* ================================================
+   Decorative Pattern
+   ================================================ */
+.decorative-bg {
+  background-image: radial-gradient(circle at 1px 1px, rgba(107, 91, 79, 0.06) 1px, transparent 0);
+  background-size: 32px 32px;
 }
