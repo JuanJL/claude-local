@@ -33,6 +33,7 @@ on:
 jobs:
   post:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -46,9 +47,13 @@ jobs:
       - name: Install dependencies
         run: npm ci --ignore-scripts
 
+      - name: Refresh market data
+        run: npx tsx scripts/refresh-market-data.ts
+
       - name: Generate and email Reddit draft
         env:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          DRAFT_EMAIL: ${{ secrets.DRAFT_EMAIL }}
           UPSTASH_REDIS_REST_URL: ${{ secrets.UPSTASH_REDIS_REST_URL }}
           UPSTASH_REDIS_REST_TOKEN: ${{ secrets.UPSTASH_REDIS_REST_TOKEN }}
         run: |
@@ -69,7 +74,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add scripts/reddit-post-history.json
-          git diff --cached --quiet || git commit -m "chore: update reddit post history"
+          git add scripts/reddit-post-history.json src/data/*.json
+          git diff --cached --quiet || git commit -m "chore: update market data and post history"
           git push
         continue-on-error: true

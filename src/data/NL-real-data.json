@@ -1,39 +1,249 @@
 {
   "market": "NL",
   "market_name": "Netherlands",
-  "last_updated": "2026-02-25",
+  "last_updated": "2026-02-26",
   "total_casinos": 24,
   "total_games": 847,
   "games": [
-    { "name": "Sweet Bonanza", "provider": "Pragmatic Play", "category": "slots", "visibility_score": 94.2, "casino_count": 22, "avg_position": 3.1 },
-    { "name": "Gates of Olympus", "provider": "Pragmatic Play", "category": "slots", "visibility_score": 91.7, "casino_count": 21, "avg_position": 4.2 },
-    { "name": "Big Bass Splash", "provider": "Pragmatic Play", "category": "slots", "visibility_score": 88.3, "casino_count": 20, "avg_position": 5.8 },
-    { "name": "Starlight Princess", "provider": "Pragmatic Play", "category": "slots", "visibility_score": 85.1, "casino_count": 19, "avg_position": 7.3 },
-    { "name": "Book of Dead", "provider": "Play'n GO", "category": "slots", "visibility_score": 82.6, "casino_count": 22, "avg_position": 8.1 },
-    { "name": "Reactoonz 2", "provider": "Play'n GO", "category": "slots", "visibility_score": 78.4, "casino_count": 18, "avg_position": 9.5 },
-    { "name": "Crazy Time", "provider": "Evolution", "category": "live", "visibility_score": 76.9, "casino_count": 20, "avg_position": 2.4 },
-    { "name": "Lightning Roulette", "provider": "Evolution", "category": "live", "visibility_score": 74.3, "casino_count": 19, "avg_position": 3.8 },
-    { "name": "Gonzo's Quest Megaways", "provider": "Red Tiger", "category": "slots", "visibility_score": 71.8, "casino_count": 17, "avg_position": 11.2 },
-    { "name": "Wolf Gold", "provider": "Pragmatic Play", "category": "slots", "visibility_score": 69.5, "casino_count": 18, "avg_position": 12.7 },
-    { "name": "Dead or Alive 2", "provider": "NetEnt", "category": "slots", "visibility_score": 67.2, "casino_count": 16, "avg_position": 14.3 },
-    { "name": "Starburst", "provider": "NetEnt", "category": "slots", "visibility_score": 65.8, "casino_count": 21, "avg_position": 15.1 },
-    { "name": "Aviator", "provider": "Spribe", "category": "crash", "visibility_score": 63.4, "casino_count": 15, "avg_position": 6.2 },
-    { "name": "JetX", "provider": "SmartSoft", "category": "crash", "visibility_score": 58.7, "casino_count": 12, "avg_position": 8.9 },
-    { "name": "Monopoly Live", "provider": "Evolution", "category": "live", "visibility_score": 56.3, "casino_count": 16, "avg_position": 5.6 },
-    { "name": "Fire Joker", "provider": "Play'n GO", "category": "slots", "visibility_score": 54.1, "casino_count": 15, "avg_position": 18.4 },
-    { "name": "Blackjack VIP", "provider": "Evolution", "category": "live", "visibility_score": 52.8, "casino_count": 18, "avg_position": 7.1 },
-    { "name": "The Dog House Megaways", "provider": "Pragmatic Play", "category": "slots", "visibility_score": 51.2, "casino_count": 14, "avg_position": 16.8 },
-    { "name": "Rise of Olympus", "provider": "Play'n GO", "category": "slots", "visibility_score": 49.7, "casino_count": 13, "avg_position": 19.2 },
-    { "name": "Plinko", "provider": "Spribe", "category": "crash", "visibility_score": 47.3, "casino_count": 11, "avg_position": 10.5 },
-    { "name": "Sugar Rush", "provider": "Pragmatic Play", "category": "slots", "visibility_score": 45.6, "casino_count": 14, "avg_position": 20.1 },
-    { "name": "Wanted Dead or a Wild", "provider": "Hacksaw Gaming", "category": "slots", "visibility_score": 43.9, "casino_count": 12, "avg_position": 17.5 },
-    { "name": "Chaos Crew", "provider": "Hacksaw Gaming", "category": "slots", "visibility_score": 41.2, "casino_count": 11, "avg_position": 22.3 },
-    { "name": "Dream Catcher", "provider": "Evolution", "category": "live", "visibility_score": 39.8, "casino_count": 15, "avg_position": 9.4 },
-    { "name": "European Roulette", "provider": "NetEnt", "category": "table", "visibility_score": 38.1, "casino_count": 17, "avg_position": 12.6 },
-    { "name": "Fruit Party", "provider": "Pragmatic Play", "category": "slots", "visibility_score": 36.4, "casino_count": 12, "avg_position": 23.7 },
-    { "name": "Cash or Crash", "provider": "Evolution", "category": "live", "visibility_score": 34.7, "casino_count": 13, "avg_position": 11.8 },
-    { "name": "Tome of Madness", "provider": "Play'n GO", "category": "slots", "visibility_score": 33.2, "casino_count": 10, "avg_position": 25.1 },
-    { "name": "3 Hand Casino Hold'em", "provider": "NetEnt", "category": "table", "visibility_score": 31.5, "casino_count": 12, "avg_position": 18.9 },
-    { "name": "Mines", "provider": "Spribe", "category": "crash", "visibility_score": 29.8, "casino_count": 9, "avg_position": 13.7 }
+    {
+      "name": "Gates of Olympus",
+      "provider": "Pragmatic Play",
+      "category": "slots",
+      "visibility_score": 94.2,
+      "casino_count": 20,
+      "avg_position": 4.1
+    },
+    {
+      "name": "Sweet Bonanza",
+      "provider": "Pragmatic Play",
+      "category": "slots",
+      "visibility_score": 93.2,
+      "casino_count": 22,
+      "avg_position": 3.3
+    },
+    {
+      "name": "Big Bass Splash",
+      "provider": "Pragmatic Play",
+      "category": "slots",
+      "visibility_score": 85.5,
+      "casino_count": 20,
+      "avg_position": 6
+    },
+    {
+      "name": "Book of Dead",
+      "provider": "Play'n GO",
+      "category": "slots",
+      "visibility_score": 84.2,
+      "casino_count": 22,
+      "avg_position": 8
+    },
+    {
+      "name": "Starlight Princess",
+      "provider": "Pragmatic Play",
+      "category": "slots",
+      "visibility_score": 82.9,
+      "casino_count": 19,
+      "avg_position": 7.5
+    },
+    {
+      "name": "Crazy Time",
+      "provider": "Evolution",
+      "category": "live",
+      "visibility_score": 76.6,
+      "casino_count": 20,
+      "avg_position": 2.6
+    },
+    {
+      "name": "Reactoonz 2",
+      "provider": "Play'n GO",
+      "category": "slots",
+      "visibility_score": 75.7,
+      "casino_count": 18,
+      "avg_position": 9.7
+    },
+    {
+      "name": "Gonzo's Quest Megaways",
+      "provider": "Red Tiger",
+      "category": "slots",
+      "visibility_score": 73.7,
+      "casino_count": 17,
+      "avg_position": 11.1
+    },
+    {
+      "name": "Lightning Roulette",
+      "provider": "Evolution",
+      "category": "live",
+      "visibility_score": 71.5,
+      "casino_count": 19,
+      "avg_position": 4.1
+    },
+    {
+      "name": "Wolf Gold",
+      "provider": "Pragmatic Play",
+      "category": "slots",
+      "visibility_score": 71.1,
+      "casino_count": 18,
+      "avg_position": 12.6
+    },
+    {
+      "name": "Dead or Alive 2",
+      "provider": "NetEnt",
+      "category": "slots",
+      "visibility_score": 69.2,
+      "casino_count": 16,
+      "avg_position": 14.2
+    },
+    {
+      "name": "Starburst",
+      "provider": "NetEnt",
+      "category": "slots",
+      "visibility_score": 66.2,
+      "casino_count": 21,
+      "avg_position": 14.8
+    },
+    {
+      "name": "Aviator",
+      "provider": "Spribe",
+      "category": "crash",
+      "visibility_score": 62.4,
+      "casino_count": 15,
+      "avg_position": 6.3
+    },
+    {
+      "name": "JetX",
+      "provider": "SmartSoft",
+      "category": "crash",
+      "visibility_score": 59.4,
+      "casino_count": 12,
+      "avg_position": 8.4
+    },
+    {
+      "name": "Monopoly Live",
+      "provider": "Evolution",
+      "category": "live",
+      "visibility_score": 55.1,
+      "casino_count": 16,
+      "avg_position": 6
+    },
+    {
+      "name": "Fire Joker",
+      "provider": "Play'n GO",
+      "category": "slots",
+      "visibility_score": 54.9,
+      "casino_count": 16,
+      "avg_position": 18.2
+    },
+    {
+      "name": "The Dog House Megaways",
+      "provider": "Pragmatic Play",
+      "category": "slots",
+      "visibility_score": 51.9,
+      "casino_count": 14,
+      "avg_position": 16.6
+    },
+    {
+      "name": "Blackjack VIP",
+      "provider": "Evolution",
+      "category": "live",
+      "visibility_score": 50.1,
+      "casino_count": 17,
+      "avg_position": 7.4
+    },
+    {
+      "name": "Rise of Olympus",
+      "provider": "Play'n GO",
+      "category": "slots",
+      "visibility_score": 49.4,
+      "casino_count": 14,
+      "avg_position": 19.3
+    },
+    {
+      "name": "Wanted Dead or a Wild",
+      "provider": "Hacksaw Gaming",
+      "category": "slots",
+      "visibility_score": 46.4,
+      "casino_count": 13,
+      "avg_position": 17
+    },
+    {
+      "name": "Plinko",
+      "provider": "Spribe",
+      "category": "crash",
+      "visibility_score": 46.3,
+      "casino_count": 11,
+      "avg_position": 11
+    },
+    {
+      "name": "Sugar Rush",
+      "provider": "Pragmatic Play",
+      "category": "slots",
+      "visibility_score": 46.2,
+      "casino_count": 13,
+      "avg_position": 19.6
+    },
+    {
+      "name": "Chaos Crew",
+      "provider": "Hacksaw Gaming",
+      "category": "slots",
+      "visibility_score": 41.7,
+      "casino_count": 11,
+      "avg_position": 22.2
+    },
+    {
+      "name": "Dream Catcher",
+      "provider": "Evolution",
+      "category": "live",
+      "visibility_score": 39.8,
+      "casino_count": 15,
+      "avg_position": 8.9
+    },
+    {
+      "name": "European Roulette",
+      "provider": "NetEnt",
+      "category": "table",
+      "visibility_score": 39.7,
+      "casino_count": 17,
+      "avg_position": 12.5
+    },
+    {
+      "name": "Cash or Crash",
+      "provider": "Evolution",
+      "category": "live",
+      "visibility_score": 36,
+      "casino_count": 13,
+      "avg_position": 11.6
+    },
+    {
+      "name": "Fruit Party",
+      "provider": "Pragmatic Play",
+      "category": "slots",
+      "visibility_score": 35.7,
+      "casino_count": 12,
+      "avg_position": 24
+    },
+    {
+      "name": "Tome of Madness",
+      "provider": "Play'n GO",
+      "category": "slots",
+      "visibility_score": 34,
+      "casino_count": 10,
+      "avg_position": 24.9
+    },
+    {
+      "name": "3 Hand Casino Hold'em",
+      "provider": "NetEnt",
+      "category": "table",
+      "visibility_score": 30.5,
+      "casino_count": 12,
+      "avg_position": 19.1
+    },
+    {
+      "name": "Mines",
+      "provider": "Spribe",
+      "category": "crash",
+      "visibility_score": 26.9,
+      "casino_count": 9,
+      "avg_position": 13.7
+    }
   ]
 }

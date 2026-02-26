@@ -1,0 +1,15 @@
+{
+  "markets": {
+    "available": ["NL", "UK", "DE", "ES", "SE", "DK", "IT", "BE"],
+    "priority": ["NL", "UK", "DE", "ES", "SE", "DK", "IT", "BE"]
+  },
+  "subreddits": {
+    "provider-market-share": ["igaming", "onlinegambling", "gambling"],
+    "top-games-ranking": ["slots", "onlinegambling", "gambling", "casinotracker"],
+    "weekly-movers": ["igaming", "slots", "onlinegambling"],
+    "cross-market-comparison": ["igaming", "onlinegambling"],
+    "category-insights": ["igaming", "slots", "gambling", "casinotracker"]
+  },
+  "cooldown_hours": 48,
+  "dedup_days": 30
+}

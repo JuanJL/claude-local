@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "reddit-post": "npx tsx scripts/reddit-poster.ts",
-    "reddit-post:dry": "npx tsx scripts/reddit-poster.ts --dry-run"
+    "reddit-post:dry": "npx tsx scripts/reddit-poster.ts --dry-run",
+    "refresh-data": "npx tsx scripts/refresh-market-data.ts"
   },
   "devDependencies": {
     "tsx": "^4.7.0",

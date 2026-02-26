@@ -1,29 +1,169 @@
 {
   "market": "DE",
   "market_name": "Germany",
-  "last_updated": "2026-02-25",
+  "last_updated": "2026-02-26",
   "total_casinos": 18,
   "total_games": 612,
   "games": [
-    { "name": "Book of Dead", "provider": "Play'n GO", "category": "slots", "visibility_score": 90.3, "casino_count": 17, "avg_position": 2.4 },
-    { "name": "Sweet Bonanza", "provider": "Pragmatic Play", "category": "slots", "visibility_score": 87.1, "casino_count": 16, "avg_position": 3.8 },
-    { "name": "Gates of Olympus", "provider": "Pragmatic Play", "category": "slots", "visibility_score": 84.6, "casino_count": 15, "avg_position": 4.5 },
-    { "name": "Starburst", "provider": "NetEnt", "category": "slots", "visibility_score": 81.2, "casino_count": 17, "avg_position": 5.7 },
-    { "name": "Fire Joker", "provider": "Play'n GO", "category": "slots", "visibility_score": 78.5, "casino_count": 16, "avg_position": 6.3 },
-    { "name": "Reactoonz 2", "provider": "Play'n GO", "category": "slots", "visibility_score": 75.8, "casino_count": 14, "avg_position": 7.9 },
-    { "name": "Big Bass Splash", "provider": "Pragmatic Play", "category": "slots", "visibility_score": 72.4, "casino_count": 13, "avg_position": 8.6 },
-    { "name": "Wolf Gold", "provider": "Pragmatic Play", "category": "slots", "visibility_score": 69.1, "casino_count": 14, "avg_position": 10.2 },
-    { "name": "Gonzo's Quest Megaways", "provider": "Red Tiger", "category": "slots", "visibility_score": 66.7, "casino_count": 12, "avg_position": 11.8 },
-    { "name": "Dead or Alive 2", "provider": "NetEnt", "category": "slots", "visibility_score": 63.3, "casino_count": 13, "avg_position": 12.5 },
-    { "name": "Starlight Princess", "provider": "Pragmatic Play", "category": "slots", "visibility_score": 60.8, "casino_count": 12, "avg_position": 13.1 },
-    { "name": "Rise of Olympus", "provider": "Play'n GO", "category": "slots", "visibility_score": 57.4, "casino_count": 11, "avg_position": 14.7 },
-    { "name": "The Dog House Megaways", "provider": "Pragmatic Play", "category": "slots", "visibility_score": 54.2, "casino_count": 11, "avg_position": 15.3 },
-    { "name": "Sugar Rush", "provider": "Pragmatic Play", "category": "slots", "visibility_score": 51.6, "casino_count": 10, "avg_position": 16.8 },
-    { "name": "Wanted Dead or a Wild", "provider": "Hacksaw Gaming", "category": "slots", "visibility_score": 48.3, "casino_count": 9, "avg_position": 17.5 },
-    { "name": "Fruit Party", "provider": "Pragmatic Play", "category": "slots", "visibility_score": 45.7, "casino_count": 10, "avg_position": 19.2 },
-    { "name": "Chaos Crew", "provider": "Hacksaw Gaming", "category": "slots", "visibility_score": 42.1, "casino_count": 8, "avg_position": 20.6 },
-    { "name": "Tome of Madness", "provider": "Play'n GO", "category": "slots", "visibility_score": 39.5, "casino_count": 9, "avg_position": 21.4 },
-    { "name": "European Roulette", "provider": "NetEnt", "category": "table", "visibility_score": 36.8, "casino_count": 14, "avg_position": 10.8 },
-    { "name": "Mines", "provider": "Spribe", "category": "crash", "visibility_score": 33.2, "casino_count": 6, "avg_position": 14.3 }
+    {
+      "name": "Book of Dead",
+      "provider": "Play'n GO",
+      "category": "slots",
+      "visibility_score": 92.1,
+      "casino_count": 17,
+      "avg_position": 1.9
+    },
+    {
+      "name": "Sweet Bonanza",
+      "provider": "Pragmatic Play",
+      "category": "slots",
+      "visibility_score": 87.6,
+      "casino_count": 15,
+      "avg_position": 3.7
+    },
+    {
+      "name": "Gates of Olympus",
+      "provider": "Pragmatic Play",
+      "category": "slots",
+      "visibility_score": 84.7,
+      "casino_count": 15,
+      "avg_position": 4.3
+    },
+    {
+      "name": "Starburst",
+      "provider": "NetEnt",
+      "category": "slots",
+      "visibility_score": 78.4,
+      "casino_count": 17,
+      "avg_position": 5.9
+    },
+    {
+      "name": "Fire Joker",
+      "provider": "Play'n GO",
+      "category": "slots",
+      "visibility_score": 78.1,
+      "casino_count": 16,
+      "avg_position": 6.5
+    },
+    {
+      "name": "Reactoonz 2",
+      "provider": "Play'n GO",
+      "category": "slots",
+      "visibility_score": 74.2,
+      "casino_count": 14,
+      "avg_position": 8.2
+    },
+    {
+      "name": "Big Bass Splash",
+      "provider": "Pragmatic Play",
+      "category": "slots",
+      "visibility_score": 72.7,
+      "casino_count": 13,
+      "avg_position": 8.5
+    },
+    {
+      "name": "Gonzo's Quest Megaways",
+      "provider": "Red Tiger",
+      "category": "slots",
+      "visibility_score": 68.1,
+      "casino_count": 12,
+      "avg_position": 11.6
+    },
+    {
+      "name": "Wolf Gold",
+      "provider": "Pragmatic Play",
+      "category": "slots",
+      "visibility_score": 66.6,
+      "casino_count": 14,
+      "avg_position": 10.4
+    },
+    {
+      "name": "Dead or Alive 2",
+      "provider": "NetEnt",
+      "category": "slots",
+      "visibility_score": 64.1,
+      "casino_count": 14,
+      "avg_position": 12.3
+    },
+    {
+      "name": "Starlight Princess",
+      "provider": "Pragmatic Play",
+      "category": "slots",
+      "visibility_score": 60.3,
+      "casino_count": 12,
+      "avg_position": 13.2
+    },
+    {
+      "name": "Rise of Olympus",
+      "provider": "Play'n GO",
+      "category": "slots",
+      "visibility_score": 58.7,
+      "casino_count": 10,
+      "avg_position": 14.3
+    },
+    {
+      "name": "The Dog House Megaways",
+      "provider": "Pragmatic Play",
+      "category": "slots",
+      "visibility_score": 51.9,
+      "casino_count": 10,
+      "avg_position": 15.4
+    },
+    {
+      "name": "Sugar Rush",
+      "provider": "Pragmatic Play",
+      "category": "slots",
+      "visibility_score": 49.5,
+      "casino_count": 10,
+      "avg_position": 17.1
+    },
+    {
+      "name": "Wanted Dead or a Wild",
+      "provider": "Hacksaw Gaming",
+      "category": "slots",
+      "visibility_score": 48.1,
+      "casino_count": 9,
+      "avg_position": 18
+    },
+    {
+      "name": "Fruit Party",
+      "provider": "Pragmatic Play",
+      "category": "slots",
+      "visibility_score": 46.4,
+      "casino_count": 10,
+      "avg_position": 19.2
+    },
+    {
+      "name": "Tome of Madness",
+      "provider": "Play'n GO",
+      "category": "slots",
+      "visibility_score": 42.1,
+      "casino_count": 10,
+      "avg_position": 21.4
+    },
+    {
+      "name": "Chaos Crew",
+      "provider": "Hacksaw Gaming",
+      "category": "slots",
+      "visibility_score": 41.1,
+      "casino_count": 8,
+      "avg_position": 20.9
+    },
+    {
+      "name": "Mines",
+      "provider": "Spribe",
+      "category": "crash",
+      "visibility_score": 35.5,
+      "casino_count": 5,
+      "avg_position": 13.9
+    },
+    {
+      "name": "European Roulette",
+      "provider": "NetEnt",
+      "category": "table",
+      "visibility_score": 34.4,
+      "casino_count": 14,
+      "avg_position": 11
+    }
   ]
 }

@@ -27,25 +27,26 @@ interface CLIArgs {
   subreddit: string | null;
 }
 
-// ── Constants ─────────────────────────────────────────────────────────────────
+// ── Config ────────────────────────────────────────────────────────────────────
+
+interface Config {
+  markets: { available: string[]; priority: string[] };
+  subreddits: Record<string, string[]>;
+  cooldown_hours: number;
+  dedup_days: number;
+}
+
+const CONFIG: Config = JSON.parse(
+  readFileSync(resolve(__dirname, "config.json"), "utf-8")
+);
 
 const HISTORY_PATH = resolve(__dirname, "reddit-post-history.json");
-const AVAILABLE_MARKETS = ["NL", "UK", "DE", "ES", "SE", "DK", "IT", "BE"];
-const MARKET_PRIORITY = ["NL", "UK", "DE", "ES", "SE", "DK", "IT", "BE"];
-
-const DRAFT_EMAIL = "jghmlacroix@gmail.com";
-
-// Subreddits per template
-const TEMPLATE_SUBREDDITS: Record<string, string[]> = {
-  "provider-market-share": ["igaming", "onlinegambling", "gambling"],
-  "top-games-ranking": ["slots", "onlinegambling", "gambling", "casinotracker"],
-  "weekly-movers": ["igaming", "slots", "onlinegambling"],
-  "cross-market-comparison": ["igaming", "onlinegambling"],
-  "category-insights": ["igaming", "slots", "gambling", "casinotracker"],
-};
-
-const COOLDOWN_HOURS = 48;
-const DEDUP_DAYS = 30;
+const AVAILABLE_MARKETS = CONFIG.markets.available;
+const MARKET_PRIORITY = CONFIG.markets.priority;
+const TEMPLATE_SUBREDDITS = CONFIG.subreddits;
+const COOLDOWN_HOURS = CONFIG.cooldown_hours;
+const DEDUP_DAYS = CONFIG.dedup_days;
+const DRAFT_EMAIL = process.env.DRAFT_EMAIL ?? "jghmlacroix@gmail.com";
 
 // ── CLI argument parsing ──────────────────────────────────────────────────────
 
@@ -83,7 +84,12 @@ function parseArgs(): CLIArgs {
 function loadHistory(): PostHistoryEntry[] {
   try {
     const raw = readFileSync(HISTORY_PATH, "utf-8");
-    return JSON.parse(raw) as PostHistoryEntry[];
+    try {
+      return JSON.parse(raw) as PostHistoryEntry[];
+    } catch (parseErr) {
+      console.warn(`WARNING: post history is malformed JSON, starting fresh. Error: ${parseErr}`);
+      return [];
+    }
   } catch {
     return [];
   }
@@ -349,6 +355,42 @@ async function sendDraftEmail(
   }
 }
 
+// ── Alert email (for failures) ────────────────────────────────────────────────
+
+async function sendAlertEmail(
+  subject: string,
+  details: string
+): Promise<void> {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) return;
+
+  try {
+    await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        from: "LobbyRanker Bot <bot@lobbyranker.com>",
+        to: DRAFT_EMAIL,
+        subject: `[ALERT] ${subject}`,
+        html: `<div style="font-family:sans-serif;max-width:600px;margin:0 auto;padding:20px;">
+          <div style="background:#dc2626;color:white;padding:16px 24px;border-radius:8px 8px 0 0;font-weight:600;font-size:18px;">Reddit Poster Alert</div>
+          <div style="background:white;padding:24px;border:1px solid #e5e5e5;border-top:none;border-radius:0 0 8px 8px;">
+            <p style="margin:0 0 12px;font-weight:600;">${esc(subject)}</p>
+            <pre style="background:#f4f4f4;padding:12px;border-radius:4px;font-size:13px;white-space:pre-wrap;">${esc(details)}</pre>
+            <p style="color:#666;font-size:12px;margin:16px 0 0;">${new Date().toISOString()}</p>
+          </div>
+        </div>`,
+      }),
+    });
+    console.log(`Alert email sent to ${DRAFT_EMAIL}`);
+  } catch {
+    console.log("Failed to send alert email");
+  }
+}
+
 // ── Delta data from Redis (optional) ──────────────────────────────────────────
 
 async function loadDeltaFromRedis(
@@ -472,7 +514,11 @@ async function generateAndProcess(
   }
 
   if (!post) {
-    console.log("All markets failed to generate a post.");
+    console.log("ERROR: All markets failed to generate a post.");
+    await sendAlertEmail(
+      "Reddit Poster: no post generated",
+      `Template "${templateId}" returned null for all available markets.\n\nCheck if market data files exist and contain enough data.`
+    );
     return;
   }
 
@@ -526,11 +572,16 @@ async function generateAndProcess(
   if (sent) {
     console.log("Done! Check your email for the draft.");
   } else {
-    console.log("Email failed — check RESEND_API_KEY.");
+    console.log("ERROR: Draft email failed — check RESEND_API_KEY.");
+    // Don't send alert email since email itself is broken
   }
 }
 
-main().catch((err) => {
+main().catch(async (err) => {
   console.error("Fatal error:", err);
+  await sendAlertEmail(
+    "Reddit Poster crashed",
+    `Unhandled error: ${err instanceof Error ? err.message : String(err)}\n\n${err instanceof Error ? err.stack ?? "" : ""}`
+  ).catch(() => {});
   process.exit(0);
 });
