@@ -1,0 +1,75 @@
+name: Reddit Auto-Poster (Email Draft)
+
+on:
+  schedule:
+    # 14:00 UTC = 15:00 CET — Reddit peak traffic
+    - cron: "0 14 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run (preview only, no email)"
+        required: false
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
+      template:
+        description: "Force specific template"
+        required: false
+        type: choice
+        options:
+          - ""
+          - "provider-market-share"
+          - "top-games-ranking"
+          - "weekly-movers"
+          - "cross-market-comparison"
+          - "category-insights"
+      market:
+        description: "Force specific market (NL, UK, DE, ES, SE, DK, IT, BE)"
+        required: false
+        default: ""
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Generate and email Reddit draft
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          UPSTASH_REDIS_REST_URL: ${{ secrets.UPSTASH_REDIS_REST_URL }}
+          UPSTASH_REDIS_REST_TOKEN: ${{ secrets.UPSTASH_REDIS_REST_TOKEN }}
+        run: |
+          ARGS=""
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            ARGS="$ARGS --dry-run"
+          fi
+          if [ -n "${{ inputs.template }}" ]; then
+            ARGS="$ARGS --template ${{ inputs.template }}"
+          fi
+          if [ -n "${{ inputs.market }}" ]; then
+            ARGS="$ARGS --market ${{ inputs.market }}"
+          fi
+          npx tsx scripts/reddit-poster.ts $ARGS
+
+      - name: Commit post history
+        if: inputs.dry_run != 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add scripts/reddit-post-history.json
+          git diff --cached --quiet || git commit -m "chore: update reddit post history"
+          git push
+        continue-on-error: true

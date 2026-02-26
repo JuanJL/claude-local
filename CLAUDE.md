@@ -67,6 +67,7 @@ I'll guide you based on your experience level — from complete beginner to expe
 | `/ai-builder` | Add AI features (chat, text generation, structured output) |
 | `/dx-optimizer` | Audit & optimize project for smooth developer experience |
 | `/form-builder` | Create type-safe forms with validation |
+| `/reddit-post` | Generate & post Reddit content from market data |
 
 ---
 
@@ -114,21 +115,28 @@ Maximum speed with parallel building (Claude handles the complexity).
 ## 📁 Project Structure
 
 ```
-course-materials/
 ├── .claude/
-│   └── commands/          ← Workshop skills (slash commands)
-│       ├── start-module-1.md
-│       ├── start-module-2.md
-│       ├── start-module-3.md
-│       ├── github-status.md
-│       ├── github-init.md
-│       ├── epic-create.md
-│       ├── plan-features.md
-│       └── work-on.md
-├── starter-app/           ← Template participants copy
+│   └── commands/              ← Slash commands
+│       └── reddit-post.md     ← Reddit posting command
+├── .github/
+│   └── workflows/
+│       └── reddit-poster.yml  ← Daily cron (14:00 UTC)
+├── scripts/
+│   ├── reddit-templates.ts    ← 5 post templates + data functions
+│   ├── reddit-poster.ts       ← Main: template selection, Reddit API, fallback
+│   └── reddit-post-history.json ← Post tracking (committed)
+├── src/
+│   ├── data/                  ← Market data (NL, UK, DE, ES)
+│   │   ├── NL-real-data.json
+│   │   ├── UK-real-data.json
+│   │   ├── DE-real-data.json
+│   │   └── ES-real-data.json
+│   └── lib/
+│       └── delta-types.ts     ← Shared types
+├── starter-app/               ← Next.js template
 │   ├── src/
-│   └── CLAUDE.md          ← Their sandbox instructions
-└── CLAUDE.md              ← This file
+│   └── CLAUDE.md
+└── CLAUDE.md                  ← This file
 ```
 
 ---
